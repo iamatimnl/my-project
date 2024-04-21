@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+  <style>
+    time-slot {
+        display: inline-block;
+        width: 90px;
+        height: 28px;
+        line-height: 30px;
+        padding: 0;
+        margin: 10px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .time-slot.selected {
+        background-color: #bf6d03;
+    }
+
+    .time-slot:hover {
+        background-color: #0056b3;
+    }
+
+    @media (max-width: 600px) {
+        .time-slot {
+            width: 70px; /* Smaller width for smaller screens */
+            margin: 5px; /* Smaller margin for a tighter layout */
+        }
+    }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sushi Nieuw</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calendar">
+        <div class="header-container">
+          <img src="img/sn.jpg" alt="Logo" class="logo">
+          <div class="container">
+            <img src="logo/9.png" alt="Logo" class="small-right-logo">
+        </div>
+            <h1>Sushi Nieuw Werkschema</h1>
+            <select id="weekSelect"></select> <!-- 周数选择下拉列表 -->
+            <select id="monthSelect"></select> <!-- 月份选择下拉列表 -->
+            <select id="yearSelect"></select> <!-- 年份选择下拉列表 -->
+            <select id="nameSelect" class="name-dropdown">
+              <option value="" selected disabled>Aanmelden</option>
+  
+              <option value="Mitchell">Mitchell</option>
+              <option value="Cat">Cat</option>
+              <option value="Lisa">Lisa</option>
+              <option value="Kainaat">Kainaat</option>
+              <option value="Jacq">Jacq</option>
+              <option value="Joa">Joa</option>
+              <option value="Chiara">Chiara</option>
+              <option value="Quinten">Quinten</option>
+              <option value="Coper">Coper</option>
+              <option value="Michel">Michel</option>
+              <option value="Samir">Samir</option>
+              <option value="Delaney">Delaney</option>
+              <option value="Theijn">Theijn</option>
+              <option value="Jady">Jady</option>
+              <option value="Sebastian">Sebastian</option>
+              <option value="Ramon">Ramon</option>
+              <option value="Ryan">Ryan</option>
+              <option value="Danielle">Danielle</option>
+              <option value="Delano">Delano</option>
+              <option value="Lucas">Lucas</option>
+          </select>
+ 
+        </div>
+        <h2> <!-- Assuming you want a title here -->
+            <div class="weekdays">
+                <div class="weekday" id="monday">
+                    <span>星期一 <span class="date" id="mon"></span></span>
+                    <div class="times" id="times-mon"></div>
+                </div>
+                <div class="weekday" id="tuesday">
+                    <span>星期二 <span class="date" id="tue"></span></span>
+                    <div class="times" id="times-tue"></div>
+                </div>
+                <div class="weekday" id="wednesday">
+                    <span>星期三 <span class="date" id="wed"></span></span>
+                    <div class="times" id="times-wed"></div>
+                </div>
+                <div class="weekday" id="thursday">
+                    <span>星期四 <span class="date" id="thu"></span></span>
+                    <div class="times" id="times-thu"></div>
+                </div>
+                <div class="weekday" id="friday">
+                    <span>星期五 <span class="date" id="fri"></span></span>
+                    <div class="times" id="times-fri"></div>
+                </div>
+                <div class="weekday" id="saturday">
+                    <span>星期六 <span class="date" id="sat"></span></span>
+                    <div class="times" id="times-sat"></div>
+                </div>
+                <div class="weekday" id="sunday">
+                    <span>星期日 <span class="date" id="sun"></span></span>
+                    <div class="times" id="times-sun"></div></h2>
+            </div>
+        </div>
+        <div id="tooltip" style="display: none; position: absolute; padding: 5px; background: black; color: white; border-radius: 5px;">不可选择</div>
+
+    </div>
+    
+        <div class="footer-buttons">
+          <button id="resetTime">Reset</button> <!-- Reset button to clear selections -->
+          
+          <button id="submit">Versturen</button>
+      </div>
+  
+      <script src="script.js"></script>
+      <script>  document.addEventListener('DOMContentLoaded', function() {
+        const nameSelect = document.getElementById("nameSelect");
+        const timeSlots = document.querySelectorAll('.time-slot');
+        const submitButton = document.getElementById('submit');
+        const resetButton = document.getElementById('resetTime');
+    
+        function updateSlotAvailability() {
+            const slotsEnabled = !!nameSelect.value;  // 确保下拉菜单选择有效值
+            timeSlots.forEach(button => {
+                button.disabled = !slotsEnabled;
+                button.title = !slotsEnabled ? "Eerst aanmelden aub!" : "Klik om te selecteren";
+            });
+        }
+        timeSlots.forEach(button => {
+    
+          button.addEventListener('click', function() {
+                if (!this.disabled) {
+                    let currentlySelected = document.querySelector('.time-slot.selected[data-day="' + this.dataset.day + '"]');
+                    if (currentlySelected && currentlySelected !== this) {
+                        currentlySelected.classList.remove('selected'); // 取消当前选中
+                    }
+                    this.classList.add('selected');  // 添加选中类
+                    displayCustomMessage(this.dataset.day, this.dataset.hour);
+                } else {
+                    alert("Eerst aanmelden aub!");
+                }
+            });
+        });
+    
+        function displayCustomMessage(day, hour) {
+            const dayNames = {
+                'mon': 'maandag', 'tue': 'dinsdag', 'wed': 'woensdag',
+                'thu': 'donderdag', 'fri': 'vrijdag', 'sat': 'zaterdag', 'sun': 'zondag'
+            };
+            alert(`Je kan ${dayNames[day] || day} om ${hour}:00 uur beginnen.`);
+        }
+    
+        resetButton.addEventListener('click', () => {
+            timeSlots.forEach(button => {
+                button.classList.remove('selected');
+                button.disabled = true;  // 禁用按钮
+                button.title = "Eerst aanmelden aub!";
+            });
+        });
+    
+        submitButton.addEventListener('click', (event) => {
+            if (!confirm("Are u sure?")) {
+                event.preventDefault();
+            }
+        });
+    
+        nameSelect.addEventListener('change', updateSlotAvailability);
+        updateSlotAvailability();  // 初始更新
+    });
+      </script>
+        
+    </body>
+    </html>

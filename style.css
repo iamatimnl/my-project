@@ -1,0 +1,343 @@
+.calendar h2 { padding: 100px;
+  color:transparent;/* Assuming h2 is under .calendar for specificity */
+   margin-top: 6%; /* Adjust this value based on actual header height and desired space */
+   text-align: center; /* Example alignment */
+   border:#007BFF;
+   padding-top:0%;
+   padding: auto;
+   margin-bottom: 12;
+   background-color:whitesmoke;
+ }
+ 
+ .container {
+   position: relative; /* This makes it a positioning context for absolutely positioned children */
+   height: 60px; /* Set as required */
+   width: 100px; /* Set as required */
+ }
+ 
+ .small-right-logo {
+   position: absolute;
+   top: 7px; /* Position from the top of the container */
+   right: -800px; /* Position from the right of the container */
+   height: 40px; /* Resize as needed */
+   width:auto;
+ }
+ .container {
+   position: relative; /* This makes it a positioning context for absolutely positioned children */
+   height: 60px; /* Set as required */
+   width: 100px; /* Set as required */
+ }
+ 
+ .logo {
+   position: absolute;
+   top: 26px; /* Position from the top of the container */
+   right: 1420px; /* Position from the right of the container */
+   height:33px; /* Resize as needed */
+   width:auto;
+ }
+ 
+ 
+ 
+ 
+ 
+ /* 定制整个页面的滚动条 */
+ ::-webkit-scrollbar {
+   width: 12px; /* 设置滚动条的宽度 */
+ }
+ 
+ /* 滚动条轨道的样式 */
+ ::-webkit-scrollbar-track {
+   background: #f1f1f1; /* 轨道的背景颜色 */
+   border-radius: 10px; /* 轨道的圆角 */}
+ 
+ 
+ /* 滚动条滑块的样式 */
+ ::-webkit-scrollbar-thumb {
+   background-color: #888; /* 滑块的背景颜色 */
+   border-radius: 10px; /* 滑块的圆角 */
+   border: 3px solid #f1f1f1; /* 滑块的边框和边框颜色 */
+ }
+ 
+ /* 鼠标悬停在滚动条滑块上时的样式 */
+ ::-webkit-scrollbar-thumb:hover {
+   background: #555; /* 滑块的背景颜色变暗 */
+ }
+ .header-container {
+   display: flex;
+   align-items: center; /* 垂直居中所有子元素 */
+ }
+ 
+ .header-container .logo {
+   margin-right: 10px; /* 在logo和标题之间添加一些间隔 */
+   width: 50px; /* 调整宽度以适合你的设计 */
+ }
+ 
+ 
+ .header-container {
+   display: flex;
+   align-items: center; /* 垂直居中 */
+   justify-content: space-between; /* 元素间隔平均分布 */
+   position: fixed; /* 固定在顶部 */
+   width: 100%; /* 宽度为视口宽度 */
+   top: 0; /* 顶部对齐 */
+   left: 0; /* 左边对齐 */
+   padding: 10px 20px; /* 上下左右内边距 */
+   box-sizing: border-box; /* 边框和内边距包含在宽度内 */
+   color: rgb(202, 202, 202); /* 背景色半透明 */
+   z-index: 1000; /* 确保在最上层 */
+ }
+ 
+ 
+ body h1 {
+   position: relative;  /* 设置为相对定位 */
+   right: 4;            /* 相对原位置向右移动2px */
+   color: transparent(94, 91, 89);
+   font-size: xx-large;
+   background-color: transparent;  /* 背景色透明 */
+   margin: 0;            /* 明确设置边距为0 */
+   padding: 0;           /* 明确设置内边距为0 */
+   margin-bottom: 0;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ /* 定制整个页面的滚动条 */
+ ::-webkit-scrollbar {
+   width: 12px; /* 设置滚动条的宽度 */
+ }
+ 
+ /* 滚动条轨道的样式 */
+ ::-webkit-scrollbar-track {
+   background: #f1f1f1; /* 轨道的背景颜色 */
+   border-radius: 10px; /* 轨道的圆角 */}
+ 
+ 
+ /* 滚动条滑块的样式 */
+ ::-webkit-scrollbar-thumb {
+   background-color: #888; /* 滑块的背景颜色 */
+   border-radius: 10px; /* 滑块的圆角 */
+   border: 3px solid #f1f1f1; /* 滑块的边框和边框颜色 */
+ }
+ 
+ /* 鼠标悬停在滚动条滑块上时的样式 */
+ ::-webkit-scrollbar-thumb:hover {
+   background: #555; /* 滑块的背景颜色变暗 */
+ }
+ .header-container {
+   display: flex;
+   align-items: center; /* 垂直居中所有子元素 */
+ }
+ 
+ .header-container .logo {
+   margin-right: 10px; /* 在logo和标题之间添加一些间隔 */
+   width: 50px; /* 调整宽度以适合你的设计 */
+ }
+ 
+ 
+ .header-container {
+   display: flex;
+   align-items: center; /* 垂直居中 */
+   justify-content: space-between; /* 元素间隔平均分布 */
+   position: fixed; /* 固定在顶部 */
+   width: 100%; /* 宽度为视口宽度 */
+   top: 0; /* 顶部对齐 */
+   left: 0; /* 左边对齐 */
+   padding: 10px 20px; /* 上下左右内边距 */
+   box-sizing: border-box; /* 边框和内边距包含在宽度内 */
+   background-color: rgba(0, 0, 0, 0.5); /* 背景色半透明 */
+   z-index: 1000; /* 确保在最上层 */
+ }
+ 
+ h1 {z-index: 2; /* 确保 h1 在顶层 */
+   width: auto;
+   margin: 0 10px; /* 提供左右边距 */
+   padding: 10px 0;
+   margin: 0;
+   padding: 0;
+   color: rgb(59, 55, 55);
+   font-size: xx-large;
+   background-color: #b91717; /* 清除背景色，使用容器的背景 */
+   flex-grow: 1; /* 允许h1填充剩余空间 *
+ }
+ 
+ 
+ .selectors-container {
+   display: flex;
+   align-items: center;
+   justify-content: center; /* 水平居中对齐 */
+ }
+ #nameSelect{background-color:#83e186;  /* 深绿色背景 */
+   color:white;
+   padding: 10px;
+   margin: 0 10px; /* 两边间隔 */
+   width:min-content;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   box-shadow: 0 2px 4px rgba(0,0,0,0.2);}
+ #weekSelect, #monthSelect, #yearSelect{
+   background-color:transparent;  /* 深绿色背景 */
+   color:white;
+   padding: 10px;
+   margin: 0 10px; /* 两边间隔 */
+   width:min-content;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+ }
+ 
+ title{background-color: chocolate;}
+ 
+ /* 鼠标悬停效果 */
+ .select:hover, 
+ #weekSelect:hover, 
+ #monthSelect:hover, 
+ #yearSelect:hover,
+ #nameSelect:hover,
+ #footer-buttons button:hover
+ 
+ { /* 注意这里我假设你想要的ID是#nameSelect，而不是#name-dropdown */
+   background-color: #0c510e; /* 鼠标悬停时变为更深的绿色 */
+ }
+ 
+ 
+ /* 确保选择器文本居中，如果需要 */
+ .selectors-container {
+   display: flex;           /* 启用 Flexbox */
+   justify-content: center; /* 水平居中子元素 */
+   align-items: center;     /* 垂直居中子元素 */
+   flex-wrap: wrap;         /* 允许子元素换行 */
+ }
+ 
+ 
+ #weekSelect, #monthSelect, #yearSelect,.name-dropdown {
+   text-align: center;
+   margin: 10px;           /* 添加适当的边距来分隔选择器 */
+   min-width:100px;       /* 设置一个最小宽度以保持外观一致 */
+ }
+ 
+ /* Style to make sure h2 can contain absolute elements */
+ h2 {
+   position: relative; /* This makes it a reference for absolute children */
+   background-color: transparent;
+ }
+ .weekday {
+   color: rgb(90, 87, 87);
+   display: flex;
+   flex-direction: column;
+   align-items: center;  /* 垂直对齐所有子元素于中心 */
+   margin-bottom: 30px;  /* 保持现有的边距样式 */
+ 
+ }
+ 
+ .weekday {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; font-weight: 600;font-size: large;
+   margin-top: 50px;
+ }
+ 
+ .weekdays {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 30px;
+   background-color: transparent;
+ }
+ 
+ .weekdays .weekday {
+   text-align: center;
+   flex-grow: 1;
+ }
+ 
+ .time-slot {
+   display: inline-block; /* 改为inline-block支持设置宽高 */
+   width: 90px;  /* 指定宽度 */
+   height: 28px;  /* 指定高度 */
+   line-height: 30px; /* 使文字垂直居中 */
+   padding: 10;  /* 根据需要调整 */
+   margin: 10px;
+   background-color: #007BFF;
+   color: white;
+   border: none;  /* 根据需要去掉边框 */
+   border-radius: 8px;
+   cursor: pointer;
+   text-align: center; /* 文字水平居中 */
+   justify-content: center;
+   margin-bottom: 20;
+ }
+ 
+ 
+ .time-slot:hover {
+   background-color: #0056b3;
+ }
+ 
+ .time-slot.selected {
+   background-color: #e77a0c; /* 深蓝色背景表示选中状态 */
+ }
+ 
+ .select {
+   padding: 10px;
+   width: 50%;
+   margin: 20px auto;
+   display: block;
+   font-size: 16px;
+ }
+ .footer-buttons {
+   background-color: #9c9b9b;
+   text-align: center; /* 按钮居中对齐 */
+   padding: 20px; /* 添加一些内边距 */
+   margin-top: 0; /* 在内容和按钮之间添加一些外边距 */
+ }
+ 
+ .footer-buttons button {
+   background-color:transparent;  /* 深绿色背景 */
+   color:white;
+   left: auto;
+   padding: 10px;
+   margin: 10px; /* 两边间隔 */
+   width:fit-content;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   box-shadow: 0 2px 4px rgba(0,0,0,0.2)
+  }
+ 
+ .footer-buttons button:hover {
+   background-color:#0c510e; /* 鼠标悬停时的背景色 */
+ }
+ .time-slot:disabled, 
+ .footer-buttons button:disabled, 
+ #weekSelect:disabled, 
+ #monthSelect:disabled, 
+ #yearSelect:disabled {
+    background-color: #cccccc; /* 灰色背景表示禁用状态 */
+    color: #666666; /* 文字颜色变淡表示禁用状态 */
+    cursor: not-allowed; /* 禁止符号的光标 */
+ }
+ 
+ #tooltip {
+     display: none;         /* 默认不显示工具提示 */
+     position: absolute;    /* 绝对定位，便于控制位置 */
+     padding: 5px;          /* 内边距 */
+     background: black;     /* 背景颜色 */
+     color: white;          /* 文字颜色 */
+     border-radius: 5px;    /* 圆角边框 */
+     z-index: 1000;         /* 确保工具提示在顶层 */
+     pointer-events: none;  /* 防止工具提示阻挡鼠标事件 */
+ }
+ time-slot:disabled, .footer-buttons button:disabled, #weekSelect:disabled, #monthSelect:disabled, #yearSelect:disabled {
+   background-color: #cccccc; /* 灰色背景表示禁用状态 */
+   color: #666666; /* 文字颜色变淡表示禁用状态 */
+   cursor: not-allowed; /* 禁止符号的光标 */
+ }
+ /* Active state styles when a valid name is selected */
+.active-select {
+  background-color: #4CAF50; /* Green background */
+}
+
+/* Hover state for all buttons */
+.button:hover {
+  background-color: #0056b3;
+}
